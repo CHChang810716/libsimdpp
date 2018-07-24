@@ -4,12 +4,7 @@
 #       (See accompanying file LICENSE_1_0.txt or copy at
 #           http://www.boost.org/LICENSE_1_0.txt)
 
-file(GLOB_RECURSE HEADERS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.h *.inl)
-
-foreach(FILE ${HEADERS})
-    get_filename_component(FILE_PATH "${FILE}" PATH)
-    install(FILES "${FILE}" DESTINATION "${SIMDPP_INCLUDEDIR}/simdpp/${FILE_PATH}")
-endforeach()
+file(GLOB_RECURSE HEADERS RELATIVE ${CMAKE_SOURCE_DIR}/simdpp *.h *.inl)
 
 # Don't enable header tests by default because configuring it takes excessive
 # amount of time
