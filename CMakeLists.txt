@@ -25,8 +25,8 @@ simdpp_get_runnable_archs(NATIVE_ARCHS)
 # ------------------------------------------------------------------------------
 add_library(simdpp INTERFACE)
 target_include_directories(simdpp INTERFACE
-    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/simdpp>
-    $<INSTALL_INTERFACE:include/simdpp>
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}>
+    $<INSTALL_INTERFACE:include>
 )
 list(APPEND lib_targets simdpp)
 # set(SIMDPP_INCLUDEDIR "${CMAKE_INSTALL_PREFIX}/include/${PKG_NAME}-${SIMDPP_API_VERSION}")
