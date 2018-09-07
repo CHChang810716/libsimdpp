@@ -12,3 +12,6 @@ libsimdpp.files
 build*
 venv
 pywiki
+
+build/
+stage/
