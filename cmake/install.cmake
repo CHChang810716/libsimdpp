@@ -30,7 +30,10 @@ install(
     COMPONENT Headers
 )
 install(
-    FILES       "${project_config}" "${version_config}"
+    FILES       
+        "${project_config}"
+        "${version_config}"
+        "cmake/SimdppMultiarch.cmake"
     DESTINATION "${config_install_dir}"
 )
 
