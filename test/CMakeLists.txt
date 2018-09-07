@@ -5,7 +5,7 @@
 #           http://www.boost.org/LICENSE_1_0.txt)
 
 
-include_directories(${libsimdpp_SOURCE_DIR})
+# include_directories(${libsimdpp_SOURCE_DIR})
 
 # LIST_CONTAINS(<var> ENTRY [LIST...])
 #
@@ -121,6 +121,9 @@ add_executable(test_insn EXCLUDE_FROM_ALL
     ${TEST_INSN_SOURCES}
     ${TEST_INSN_ARCH_GEN_SOURCES}
 )
+target_include_directories(test_insn PRIVATE
+    ${CMAKE_SOURCE_DIR}
+)
 
 if(SIMDPP_MSVC)
     if(CMAKE_SIZEOF_VOID_P EQUAL 4)
@@ -165,6 +168,9 @@ endforeach()
 add_executable(test_dispatcher EXCLUDE_FROM_ALL
     ${TEST_DISPATCHER_SOURCES}
     ${TEST_DISPATCHER_ARCH_GEN_SOURCES}
+)
+target_include_directories(test_dispatcher PRIVATE
+    ${CMAKE_SOURCE_DIR}
 )
 
 if(SIMDPP_MSVC)
@@ -230,6 +236,9 @@ set(TEST_EXPR_SOURCES
 
 add_executable(test_expr EXCLUDE_FROM_ALL
     ${TEST_EXPR_SOURCES}
+)
+target_include_directories(test_expr PRIVATE
+    ${CMAKE_SOURCE_DIR}
 )
 
 if(SIMDPP_MSVC)
